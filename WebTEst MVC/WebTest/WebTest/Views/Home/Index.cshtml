@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr class="header">
+                <td><p>Название</p></td>
+                <td><p>Количество</p></td>
+                <td><p>Закупочная цена</p></td>
+                <td><p>Категория</p></td>
+                <td></td>
+            </tr>
+            @foreach (var b in Model)
+            {
+                <tr>
+                    <td><p>@b.Name</p></td>
+                    <td><p>@b.Number</p></td>
+                    <td><p>@b.Price</p></td>
+                    <td><p>@b.CategoryName</p></td>
+                    <td><p><a href="/Home/Edit/@b.ProductID">Редактировать</a></p></td>
+                    <td><p><a href="/Home/Delete/@b.ProductID">Удалить</a></p></td>
+                </tr>
+            }
+        </table>
+        <p><a href="/Home/Create/">Создать</a></p>
+    </div>
+</body>
+</html>

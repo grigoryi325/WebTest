@@ -1,0 +1,44 @@
+﻿@using WebTest.Models
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet"/>
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <table class="table table-bordered">
+            <thead style="font-weight:bold">
+            <tr>
+                <td><p>Название</p></td>
+                <td><p>Количество</p></td>
+                <td><p>Закупочная цена</p></td>
+                <td><p>Категория</p></td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var b in Model)
+            {
+                <tr>
+                    <td><p>@b.Name</p></td>
+                    <td><p>@b.Number</p></td>
+                    <td><p>@b.Price грн/1шт</p></td>
+                    <td><p>@b.ProductCategory</p></td>
+                    <td><p><a href="/Home/Edit/@b.ProductID">Редактировать</a></p></td>
+                    <td><p><a href="/Home/Delete/@b.ProductID">Удалить</a></p></td>
+                </tr>
+            }
+            </tbody>
+        </table>
+        <p><a href="/Home/Create/">Создать</a></p>
+        <p><a href="/Home/Recalculation/">Проиндексировать</a></p>
+    </div>
+</body>
+</html>
