@@ -14,6 +14,7 @@ namespace WebTest.Controllers
         // GET: Home
         ProductContext db = new ProductContext();
 
+
         public ActionResult Index()
         {
             return View(db.Products);
